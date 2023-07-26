@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "author": "Alejandro Araoz",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp",
+      "top": -16.14,
+      "left": -90,
+      "attrs": { "env": "micropython-20230426-v1.20.0" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 109.34,
+      "left": 153.79,
+      "attrs": { "color": "green", "key": "1", "bounce": "0" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 115.26,
+      "left": 54.66,
+      "attrs": { "value": "10000" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "esp:3V3", "btn1:2.l", "red", [] ],
+    [ "esp:D23", "btn1:1.l", "yellow", [] ],
+    [ "r1:1", "esp:GND.1", "black", [ "h-26.55", "v11.95" ] ],
+    [ "r1:2", "btn1:1.l", "blue", [] ]
+  ],
+  "dependencies": {}
+}
